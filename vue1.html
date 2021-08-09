@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    button{
+        width:200px;
+        height:300px;
+    }
+</style>
+</head>
+
+<script src='./vue.js'>
+Vue.config.productionTip=false
+</script>
+<body>
+    <div id="root">
+        hello{{name}}
+        {{2+2}}
+        <input @keyup.delete='showinfo' type='text' placeholder="111">
+
+        <button v-on:click="showinf(555)"></button>
+    </div>
+    
+</body>
+<script>
+    // let a={
+    //     data:123
+    // }
+    // let b={
+    //     data:111
+    // }
+    // Object.defineProperty(b,'data',{
+    //     configurable:false,
+    //     get(){
+    //         return b.data;
+    //     },
+    //     set(value){
+    //         a.data=value
+    //     }
+    // })
+</script>
+<script>
+const v= new Vue({
+    el:'#root',
+        data:{
+            name:'2222',
+            title:'同学好'
+        },
+        methods:{
+            showinf(number){
+                console.log(number)
+            },
+            showinfo(event){
+                console.log(event.target.value)
+            }
+        }
+            });
+</script>
+</html>
